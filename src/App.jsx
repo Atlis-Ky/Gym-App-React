@@ -16,7 +16,8 @@ function App() {
     if (muscles.length < 1) {
       return
     }
-    let newWorkout = generateWorkout(fate, muscles, goal)
+    let newWorkout = generateWorkout({fate, muscles, goal})
+    console.log(newWorkout)
     setWorkout(newWorkout)
   }
 
