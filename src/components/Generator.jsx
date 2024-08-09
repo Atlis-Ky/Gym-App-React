@@ -55,7 +55,7 @@ export default function Generator(props) {
   }
   
   return (
-    <SectionWrapper id={"generate"} header={"generate your workout"} title={['It\'s', 'Gains', 'o\'clock']}>
+    <SectionWrapper id={"generate"} header={"generate your workout"} title={['It\'s', 'Gains', 'Time']}>
       <Header index={"01"} title={"Choose your fate"} description={"Select the workout type you want to complete:"} />
       <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
@@ -63,7 +63,7 @@ export default function Generator(props) {
             <button onClick={() => {
               setMuscles([])
               setFate(type)
-            }} className={'bg-slate-950 border border-blue-400 py-3 duration-200 px-4 hover:border-orange-400 rounded-lg ' + (type === fate ? 'border-orange-600' : 'border-blue-400') }   key={typeIndex}>
+            }} className={'bg-slate-950 border border-blue-400 py-3 duration-200 px-4 hover:border-orange-400 rounded-lg ' + (type === fate ? 'border-orange-400' : 'border-blue-400') }   key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', " ")}</p>
             </button>
           )
@@ -72,7 +72,7 @@ export default function Generator(props) {
 
 
       <Header index={"02"} title={"Decide the Target Groups"} description={"Select which muscles you want to train:"} />
-      <div className='bg-slate-950 border border-solid border-blue-400 rounded-lg flex flex-col'>
+      <div className='bg-slate-950 border border-solid border-blue-400 hover:border-orange-400 rounded-lg flex flex-col'>
         <button onClick={toggleModal} className='relative flex p-3 items-center justify-center'>
           <p className='capitalize'>{muscles.length == 0 ? 'Select Muscle Groups' : muscles.join(' ')}</p>
           <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i>
@@ -99,14 +99,14 @@ export default function Generator(props) {
           return (
             <button onClick={() => {
               setGoal(scheme)
-            }} className={'bg-slate-950 border border-blue-400 py-3 duration-200 hover:border-orange-400 rounded-lg px-4 ' + (scheme === goal ? 'border-orange-600' : 'border-blue-400') }   key={schemeIndex}>
+            }} className={'bg-slate-950 border border-blue-400 py-3 duration-200 hover:border-orange-400 rounded-lg px-4 ' + (scheme === goal ? 'border-orange-400' : 'border-blue-400') }   key={schemeIndex}>
               <p className='capitalize'>{scheme.replaceAll('_', " ")}</p>
             </button>
           )
         })}
       </div> 
     
-      <Button func={updateWorkout} text={"Formulate"} />
+      <Button func={updateWorkout} text={"Generate Workout"} />
     </SectionWrapper>
 
   )
