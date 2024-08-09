@@ -12,7 +12,9 @@ export default function Hero() {
      
       <p className='text-sm md:text-base font-light'>Fated brothers and sister's of fitness, the time has come to obtain <span className='text-blue-400 font-medium'>Forbidden Knowledge</span>, engage in the <span className='text-blue-400 font-medium'>Secret Learnings</span> that will transform your gym experience into one of <span className='text-blue-400 font-medium'>Omnicient Productivity</span>, and become the true envy of the masses...</p>
 
-     <Button text={"Acquire Wisdom"} />
+     <Button func={() => {
+      window.location.href = '#generate'
+     }} text={"Acquire Wisdom"} />
     </div>
   )
 }
